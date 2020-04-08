@@ -15,11 +15,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.C0767722_w2020_mad3125_midterm.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_taxdetails" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.C0767722_w2020_mad3125_midterm.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_aboutus" />
 </navigation>

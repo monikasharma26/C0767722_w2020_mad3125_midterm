@@ -2,6 +2,6 @@
     <string name="app_name">C0767722_w2020_mad3125_midterm</string>
     <string name="title_activity_c_ra_calculator_details">CRaCalculatorDetailsActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_taxDetails">Tax Details </string>
+    <string name="title_aboutus">About Us</string>
 </resources>
