@@ -1,4 +1,4 @@
-package com.example.C0767722_w2020_mad3125_midterm.ui.dashboard;
+package com.example.C0767722_w2020_mad3125_midterm.ui.aboutUs;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.C0767722_w2020_mad3125_midterm.R;
 
-public class DashboardFragment extends Fragment {
+public class AboutUsFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private AboutUsViewModel notificationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_taxdetails, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        notificationsViewModel =
+                ViewModelProviders.of(this).get(AboutUsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_aboutus, container, false);
+        final TextView textView = root.findViewById(R.id.text_notifications);
+        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
