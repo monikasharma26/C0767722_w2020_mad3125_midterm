@@ -122,7 +122,121 @@
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/tvTaxFillingdate"
                     app:layout_constraintStart_toStartOf="@+id/txtGender" />
+                <TextView
+                    android:id="@+id/tvGrossIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Gross Income"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTaxFillingdate"
+                    app:layout_constraintTop_toBottomOf="@id/tvTaxFillingdate" />
+                <TextView
+                    android:id="@+id/txtGrossIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvGrossIncome"
+                    app:layout_constraintStart_toStartOf="@+id/txtTaxFillingdate" />
+
+                <TextView
+                    android:id="@+id/tvCPP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="CPP"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvGrossIncome"
+                    app:layout_constraintTop_toBottomOf="@id/tvGrossIncome" />
+                <TextView
+                    android:id="@+id/txtCPP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvCPP"
+                    app:layout_constraintStart_toStartOf="@+id/txtGrossIncome" />
+                <TextView
+                    android:id="@+id/tvEI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="EI"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvCPP"
+                    app:layout_constraintTop_toBottomOf="@id/tvCPP" />
+                <TextView
+                    android:id="@+id/txtEI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvEI"
+                    app:layout_constraintStart_toStartOf="@+id/txtCPP" />
+                <TextView
+                    android:id="@+id/tvRRSPC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="RRSP Contributed"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvEI"
+                    app:layout_constraintTop_toBottomOf="@id/tvEI" />
+                <TextView
+                    android:id="@+id/txtRSSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvRRSPC"
+                    app:layout_constraintStart_toStartOf="@+id/txtEI" />
+                <TextView
+                    android:id="@+id/tvRRSPMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="MAX RRSP Alllowed"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvRRSPC"
+                    app:layout_constraintTop_toBottomOf="@id/tvRRSPC" />
+                <TextView
+                    android:id="@+id/txtRSSPMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvRRSPMax"
+                    app:layout_constraintStart_toStartOf="@+id/txtRSSC" />
+                <TextView
+                    android:id="@+id/tvCaryForward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Carry forward RRSP"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvRRSPMax"
+                    app:layout_constraintTop_toBottomOf="@id/tvRRSPMax" />
+                <TextView
+                    android:id="@+id/txtCaryForward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvCaryForward"
+                    app:layout_constraintStart_toStartOf="@+id/txtRSSPMax" />
+                <TextView
+                    android:id="@+id/tvTotalTaxableIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Total Taxable Income"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvCaryForward"
+                    app:layout_constraintTop_toBottomOf="@id/tvCaryForward" />
+                <TextView
+                    android:id="@+id/txtotalTaxableIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxableIn"
+                    app:layout_constraintStart_toStartOf="@+id/txtCaryForward" />
                
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
