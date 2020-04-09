@@ -1,9 +1,11 @@
 package com.example.C0767722_w2020_mad3125_midterm.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.C0767722_w2020_mad3125_midterm.R;
@@ -75,6 +77,12 @@ public class CRADetailsActivity extends AppCompatActivity {
         txtRSSPMax.setText(String.valueOf("$" + numberFormat.format(details.getMaxiumRrsp())));
         txtCPP.setText(String.valueOf("$" + numberFormat.format(details.getCpp())));
         txtEI.setText(String.valueOf("$" + numberFormat.format(details.getEi())));
+        double caryValue = details.getCarryForwardRrsp();
+        if (caryValue < 0) {
+            txtCaryForward.setTextColor(Color.RED);
+        } else {
+           txtCaryForward.setTextColor(Color.BLACK);
+        }
         txtCaryForward.setText(String.valueOf("$" + numberFormat.format(details.getCarryForwardRrsp())));
         txtotalTaxableIn.setText("$" + String.valueOf(numberFormat.format(details.getTotalTaxedIncome())));
         txtTotalTaxP.setText(String.valueOf("$" + numberFormat.format(details.getTotalTaxPaid())));
