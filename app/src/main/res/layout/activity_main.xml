@@ -18,6 +18,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="horizontal"
         tools:context=".Activities.MainActivity">
 
         <TextView
@@ -75,12 +76,13 @@
                 android:id="@+id/txtFName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/ic_action_persondetails"
                 android:digits="abcdefghijklmnopqrstuvwxyzAQWERTYUIOPASDFGHJKLZXCVBNM"
+                android:drawableLeft="@drawable/ic_action_aboutus"
                 android:hint="First Name"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
@@ -100,10 +102,10 @@
                 android:id="@+id/txtLName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/ic_action_persondetails"
-                android:hint="Last Name"
                 android:digits="abcdefghijklmnopqrstuvwxyzAQWERTYUIOPASDFGHJKLZXCVBNM"
-                android:inputType="textPersonName"/>
+                android:drawableLeft="@drawable/ic_action_aboutus"
+                android:hint="Last Name"
+                android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -271,5 +273,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

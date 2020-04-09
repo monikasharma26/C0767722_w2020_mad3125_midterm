@@ -54,8 +54,6 @@ public class CRADetailsActivity extends AppCompatActivity {
     @InjectView(R.id.txtTotalTaxP)
     TextView txtTotalTaxP;
 
-    //  Calendar myCalendar = Calendar.getInstance();
-    //String taxFillingDate=numberFormat.format(myCalendar.getTime());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +61,9 @@ public class CRADetailsActivity extends AppCompatActivity {
         ButterKnife.inject(this);
         Intent intent = getIntent();
         CRACustomer details = intent.getParcelableExtra("details");
+        ActionBar bar = getSupportActionBar();
+        bar.setTitle("Tax Details");
+        bar.show();
 
         txtSin.setText(details.getSinNumber());
         txtFullName.setText(details.getFullName());
