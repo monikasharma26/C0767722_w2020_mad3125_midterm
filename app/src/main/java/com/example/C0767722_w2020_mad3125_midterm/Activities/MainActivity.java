@@ -1,8 +1,10 @@
 package com.example.C0767722_w2020_mad3125_midterm.Activities;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -73,15 +75,17 @@ public class MainActivity extends AppCompatActivity {
                     closeKeyboard();
                     openDatePicker();
                 }
+                else
+                {checkEligibleAge();}
             }
         });
         txtDOB.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
                                            openDatePicker();
+                                           checkEligibleAge();
                                        }
     });
-
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                         int currentYear = calendar.getInstance().get(Calendar.YEAR);
                        // Log.d("dsad", String.valueOf(currentYear));
                         age = currentYear -year;
-
                     }
                 }, year, month, day);
         datePicker.getDatePicker().setMaxDate(new Date().getTime());
@@ -119,20 +122,69 @@ public class MainActivity extends AppCompatActivity {
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
+
     private void sendButtonClicked() {
-        int sinNumber = Integer.valueOf(txtSinNo.getText().toString());
+        int sinNumber = Integer.parseInt(txtSinNo.getText().toString());
         String fName = txtFName.getText().toString();
         String lName = txtLName.getText().toString();
         String dob = txtDOB.getText().toString();
         String gender = radioType.getText().toString();
-        String grossIncome = txtGrossIncome.getText().toString();
+      String grossIncome = txtGrossIncome.getText().toString();
         String rrspContributed = txtRRSPCont.getText().toString();
-        CRACustomer  craCustomer = new CRACustomer(sinNumber,fName,lName,dob,gender,grossIncome,rrspContributed);
+     /*   if(txtSinNo.getText().toString().length() != 11 || fName.length()==0 || lName.length()==0 || dob.length()==0 || txtGrossIncome.getText().toString().length()==0 ||
+                txtRRSPCont.getText().toString().length()==0 || age<18)
+        {
+            if (txtSinNo.getText().toString().length() != 11) {
+                txtSinNo.setError("Sin Incorrect");
+            }
+            if (fName.length() == 0) {
+                txtFName.setError("Please Enter FirstName");
 
-        Intent intent = new Intent(this, CRACalulationDetailActivity.class);
-        intent.putExtra("details",craCustomer);
-        startActivity(intent);
+            }
+            if (lName.length() == 0) {
+                txtLName.setError("Please Enter LastName");
+
+            }
+            if (dob.length() == 0) {
+                txtDOB.setError("Please Select DOB");
+
+            }
+            if (age < 18) {
+                txtDOB.setTextColor(getResources().getColor(R.color.colorAccent));
+                txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
+                String message = "Not eligible to file tax for current year 2020";
+                txtDOB.setError(message);
+            }
+            if (txtGrossIncome.getText().toString().length() == 0) {
+                txtGrossIncome.setError("Please enter Gross Income");
+
+            }
+            if (txtRRSPCont.getText().toString().length() == 0) {
+                txtRRSPCont.setError("Please enter RRSP Contribution Income");
+            }
+        }*/
+       // else {
+            CRACustomer craCustomer = new CRACustomer(sinNumber,fName,lName,dob,gender,grossIncome,rrspContributed);
+            Intent intent = new Intent(this, CRACalulationDetailActivity.class);
+            intent.putExtra("details", craCustomer);
+            startActivity(intent);
+       // }
     }
-   
+
+        private void checkEligibleAge() {
+            txtAge.setText("Age"+age);
+            if (age < 18) {
+                txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
+                txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
+                String message = "Not eligible to file tax for current year 2020";
+                txtDOB.setError(message);
+            }
+            else
+            {
+                txtAge.setError(null);
+            }
+
+        }
+
 
 }
