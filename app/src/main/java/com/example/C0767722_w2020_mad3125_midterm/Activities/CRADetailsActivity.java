@@ -66,7 +66,7 @@ public class CRADetailsActivity extends AppCompatActivity {
         txtFullName.setText(details.getFullName());
         txtGender.setText(details.getGender());
         txtDOB.setText(details.getBirthDate());
-    //        txtAge.setText(details.getAge());
+        txtAge.setText(details.getAge());
         txtTaxFillingdate.setText(details.taxFilingDate());
         txtGrossIncome.setText("$" + String.valueOf(numberFormat.format(details.getGrossIncome())));
         txtFedTax.setText("$" + String.valueOf(numberFormat.format(details.getFedralTax())));
