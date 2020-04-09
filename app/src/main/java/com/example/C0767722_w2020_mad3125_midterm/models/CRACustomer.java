@@ -1,23 +1,22 @@
 package com.example.C0767722_w2020_mad3125_midterm.models;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.RequiresApi;
+import com.example.C0767722_w2020_mad3125_midterm.calculations.Calculation;
 
-import java.text.ParseException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 public class CRACustomer implements Parcelable {
-    private int sinNumber;
+    public String sinNumber;
     private String fName,lName,fullName;
     private String birthDate;
     private String gender;
     private int age;
-    private String grossIncome,rrsContributed;
+    private double grossIncome,rrsContributed;
     private double provincialTax,fedralTax,cpp,ei,rrsp,carryForwardRrsp,maxiumRrsp,totalTaxPaid,totalTaxedIncome;
 
 
@@ -31,8 +30,8 @@ public class CRACustomer implements Parcelable {
         public CRACustomer(){
 
         }
-    public CRACustomer(int sinNumber, String fName, String lName, String birthDate, String gender ,
-                       String grossIncome, String rrsContributed) {
+    public CRACustomer(String sinNumber, String fName, String lName, String birthDate, String gender ,
+                       Double grossIncome, Double rrsContributed) {
         this.sinNumber = sinNumber;
         this.fName = fName;
         this.lName = lName;
@@ -43,15 +42,15 @@ public class CRACustomer implements Parcelable {
     }
 
     protected CRACustomer(Parcel in) {
-        sinNumber = in.readInt();
+        sinNumber = in.readString();
         fName = in.readString();
         lName = in.readString();
         fullName = in.readString();
         birthDate = in.readString();
         age = in.readInt();
         gender = in.readString();
-        grossIncome = in.readString();
-        rrsContributed = in.readString();
+        grossIncome = in.readDouble();
+        rrsContributed = in.readDouble();
     }
 
 
@@ -67,7 +66,7 @@ public class CRACustomer implements Parcelable {
         }
     };
 
-    public int getSinNumber() {
+    public String getSinNumber() {
         return sinNumber;
     }
 
@@ -75,7 +74,7 @@ public class CRACustomer implements Parcelable {
         this.age = age;
     }
 
-    public void setSinNumber(int sinNumber) {
+    public void setSinNumber(String sinNumber) {
         this.sinNumber = sinNumber;
     }
 
@@ -94,6 +93,10 @@ public class CRACustomer implements Parcelable {
     public void setlName(String lName) {
         this.lName = lName;
     }
+    public int getAge() {
+        return age;
+    }
+
 
     public String getBirthDate() {
         return birthDate;
@@ -109,24 +112,67 @@ public class CRACustomer implements Parcelable {
         this.birthDate = birthDate;
     }
 
-    public String getGrossIncome() {
+    public double getGrossIncome() {
         return grossIncome;
     }
 
-    public void setGrossIncome(String grossIncome) {
+    public void setGrossIncome(Double grossIncome) {
         this.grossIncome = grossIncome;
     }
 
-    public String getRrsContributed() {
+    public double getRrsContributed() {
         return rrsContributed;
     }
 
-    public void setRrsContributed(String rrsContributed) {
+    public void setRrsContributed(double rrsContributed) {
         this.rrsContributed = rrsContributed;
     }
 
+    public double getProvincialTax() {
+        provincialTax = Calculation.calculateProTax(grossIncome);
+        return provincialTax;
+    }
 
+    public double getFedralTax() {
+        fedralTax = Calculation.calculateFedralTax(grossIncome);
+        return fedralTax;
+    }
 
+    public double getCpp() {
+        return cpp = Calculation.calculateCPP(grossIncome);
+    }
+
+    public double getEi() {
+        return ei  = Calculation.calculateEI(grossIncome);
+    }
+
+    public double getMaxiumRrsp() {
+        return rrsp = Calculation.calculateMaxRRSP(grossIncome);
+    }
+
+    public double getCarryForwardRrsp() {
+
+        return carryForwardRrsp = Calculation.calculateMaxRRSP(grossIncome) - rrsContributed;
+    }
+
+    
+    public double getTotalTaxPaid() {
+        totalTaxPaid = getProvincialTax()+getFedralTax();
+        return totalTaxPaid;
+    }
+
+    public double getTotalTaxedIncome() {
+        double totalamount = getEi()+getCpp()+getMaxiumRrsp();
+        totalTaxedIncome =  grossIncome - totalamount;
+        return totalTaxedIncome;
+    }
+    public String taxFilingDate() {
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String formattedDate = dateFormat.format(date);
+        return formattedDate.toUpperCase();
+    }
     @Override
     public int describeContents() {
         return 0;
@@ -134,14 +180,17 @@ public class CRACustomer implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(sinNumber);
+        dest.writeString(sinNumber);
         dest.writeString(fName);
         dest.writeString(lName);
         dest.writeString(fullName);
         dest.writeString(birthDate);
         dest.writeInt(age);
         dest.writeString(gender);
-        dest.writeString(grossIncome);
-        dest.writeString(rrsContributed);
+        dest.writeDouble(grossIncome);
+        dest.writeDouble(rrsContributed);
     }
+
+
 }
+
