@@ -108,15 +108,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout4"
+            android:id="@+id/tvDob"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:textColorHint="@color/colorbox"
             app:boxStrokeColor="@color/colorbox"
+            app:boxStrokeErrorColor="@color/colorerror"
+            app:counterOverflowTextColor="@color/colorerror"
             app:endIconTint="@color/colorbox"
             app:errorEnabled="true"
+            app:errorTextColor="@color/colorerror"
             app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +137,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvdob"
+            android:id="@+id/textInputLayout7"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -146,7 +149,7 @@
             app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+            app:layout_constraintTop_toBottomOf="@+id/tvDob">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtAge"
@@ -180,7 +183,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toEndOf="@+id/tVGender"
-            app:layout_constraintTop_toBottomOf="@+id/tvdob">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/radioFullTime"
@@ -262,6 +265,7 @@
             android:layout_marginTop="32dp"
             android:background="@color/colorbox"
             android:text="Calculate"
+            app:backgroundTint="@color/colorbox"
             app:cornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
