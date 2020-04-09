@@ -1,39 +1,39 @@
 package com.example.C0767722_w2020_mad3125_midterm.Activities;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.Build;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.C0767722_w2020_mad3125_midterm.R;
-import com.example.C0767722_w2020_mad3125_midterm.calculations.Calculation;
 import com.example.C0767722_w2020_mad3125_midterm.models.CRACustomer;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.ParseException;
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+
+import static android.graphics.Typeface.BOLD;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText txtRRSPCont;
     @InjectView(R.id.btnCalculate)
     MaterialButton btnCalculate;
+    @InjectView(R.id.tvDob)
+    TextInputLayout tvDob;
+
+
     private DatePickerDialog datePicker;
     private RadioButton radioType;
     private int age, currentYear, yearDOB;
@@ -70,8 +74,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("");
+        actionBar.show();
         int selectedId = radioGroup.getCheckedRadioButtonId();
         radioType = findViewById(selectedId);
+
+
         txtDOB.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
@@ -148,8 +157,7 @@ public class MainActivity extends AppCompatActivity {
             showAlert("Please enter Gross Income");
         } else if (txtRRSPCont.getText().toString().trim().isEmpty()) {
             showAlert("Please enter RRSP contribution");
-        }
-        else{
+        } else {
             Intent intent = new Intent(this, CRADetailsActivity.class);
             CRACustomer craCustomer = new CRACustomer();
             //Log.d("Sinnn", txtGrossIncome.getText().toString());
@@ -167,20 +175,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     private void checkEligibleAgeforTax() {
-        if(txtDOB.getText().toString().length()!=0) {
+        if (txtDOB.getText().toString().length() != 0) {
             txtAge.setText("Age " + age);
             if (age < 18) {
-             //   txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
-              //  txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
+                // tvdob.setTextColor(getResources().getColor(R.color.colorerror));
                 String message = "Not eligible to file tax for current year 2020";
-                 txtDOB.setError(message);
+                tvDob.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+                tvDob.setError(message);
             } else {
-                txtDOB.setError(null);
+                tvDob.setError(null);
             }
         }
 
     }
+
     private void showAlert(String message) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Alert!");
