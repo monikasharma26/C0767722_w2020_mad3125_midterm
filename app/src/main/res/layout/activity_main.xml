@@ -97,6 +97,26 @@
                 android:hint="Last Name" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="#BA68C8"
+            app:boxStrokeColor="#BA68C8"
+            app:endIconTint="#BA68C8"
+            app:hintTextColor="#BA68C8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDOB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="8dp"
+                android:hint="Birth Date" />
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
