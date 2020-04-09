@@ -76,7 +76,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/ic_action_persondetails"
-                android:hint="First Name" />
+                android:digits="abcdefghijklmnopqrstuvwxyzAQWERTYUIOPASDFGHJKLZXCVBNM"
+                android:hint="First Name"
+                android:inputType="textPersonName"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,7 +101,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/ic_action_persondetails"
-                android:hint="Last Name" />
+                android:hint="Last Name"
+                android:digits="abcdefghijklmnopqrstuvwxyzAQWERTYUIOPASDFGHJKLZXCVBNM"
+                android:inputType="textPersonName"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -223,7 +227,7 @@
                 android:drawableLeft="@drawable/ic_action_income"
                 android:drawablePadding="8dp"
                 android:hint="Gross Income"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -248,7 +252,7 @@
                 android:drawableLeft="@drawable/ic_action_income"
                 android:drawablePadding="8dp"
                 android:hint="RRSP Contributed"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -262,6 +266,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"></com.google.android.material.button.MaterialButton>
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
