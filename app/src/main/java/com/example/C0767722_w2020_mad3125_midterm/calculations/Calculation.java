@@ -55,8 +55,7 @@ public class Calculation {
             currenttax = currenttax * 0.0505;
             proviencetax = proviencetax + currenttax;
             //create slabs like 43906-10582.01 = 33323.99
-            if (taxIncome > 33323.99)
-            {
+            if (taxIncome > 33323.99) {
                 taxIncome = taxIncome - 33323.99;
                 if (taxIncome > 43906.99) {
                     currenttax = 43906.99;
@@ -90,21 +89,18 @@ public class Calculation {
 
                         if (taxIncome > 69999.99) {
                             taxIncome = taxIncome - 69999.99;
-
                             currenttax = taxIncome;
                             currenttax = currenttax * 0.1316;
-                            proviencetax = +proviencetax + currenttax;
-
+                            proviencetax = proviencetax + currenttax;
                         }
-
                     }
-
                 }
             }
         }
         else {
-            Log.d("Income","TotalTaxableIncome is Less Than 10582");
+            Log.d("Income", "TotalTaxableIncome is Less Than 10582");
         }
+        return proviencetax;
     }
 }
 
