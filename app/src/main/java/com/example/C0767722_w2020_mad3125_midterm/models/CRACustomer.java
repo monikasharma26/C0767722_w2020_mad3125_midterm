@@ -15,7 +15,7 @@ public class CRACustomer implements Parcelable {
     private String fName,lName,fullName;
     private String birthDate;
     private String gender;
-    private int age;
+    private String age;
     private double grossIncome,rrsContributed;
     private double provincialTax,fedralTax,cpp,ei,rrsp,carryForwardRrsp,maxiumRrsp,totalTaxPaid,totalTaxedIncome;
 
@@ -47,7 +47,7 @@ public class CRACustomer implements Parcelable {
         lName = in.readString();
         fullName = in.readString();
         birthDate = in.readString();
-        age = in.readInt();
+        age = in.readString();
         gender = in.readString();
         grossIncome = in.readDouble();
         rrsContributed = in.readDouble();
@@ -70,7 +70,7 @@ public class CRACustomer implements Parcelable {
         return sinNumber;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -93,7 +93,7 @@ public class CRACustomer implements Parcelable {
     public void setlName(String lName) {
         this.lName = lName;
     }
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
@@ -185,7 +185,7 @@ public class CRACustomer implements Parcelable {
         dest.writeString(lName);
         dest.writeString(fullName);
         dest.writeString(birthDate);
-        dest.writeInt(age);
+        dest.writeString(age);
         dest.writeString(gender);
         dest.writeDouble(grossIncome);
         dest.writeDouble(rrsContributed);
