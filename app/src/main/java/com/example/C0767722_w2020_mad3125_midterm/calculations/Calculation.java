@@ -13,6 +13,16 @@ import java.util.Date;
 public class Calculation {
 
 
+    public double CalculateEI(Double grossIncome){
+        double EI;
+        if(grossIncome>=53100){
+            EI=  53100*0.0162;
+        }
+        else{
+            EI=grossIncome*0.0162;
+        }
+        return EI;
 
+    }
 
 }
