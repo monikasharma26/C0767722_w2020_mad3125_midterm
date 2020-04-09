@@ -235,7 +235,54 @@
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxableIn"
                     app:layout_constraintStart_toStartOf="@+id/txtCaryForward" />
-               
+                <TextView
+                    android:id="@+id/tvFedTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Federal tax"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTotalTaxableIn"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalTaxableIn" />
+                <TextView
+                    android:id="@+id/txtFedTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvFedTax"
+                    app:layout_constraintStart_toStartOf="@+id/txtotalTaxableIn" />
+                <TextView
+                    android:id="@+id/tvProTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Provincial tax"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvFedTax"
+                    app:layout_constraintTop_toBottomOf="@id/tvFedTax" />
+                <TextView
+                    android:id="@+id/txtProTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvProTax"
+                    app:layout_constraintStart_toStartOf="@+id/txtFedTax" />
+                <TextView
+                    android:id="@+id/tvTotalTaxP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Total Tax Payed"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvProTax"
+                    app:layout_constraintTop_toBottomOf="@id/tvProTax" />
+                <TextView
+                    android:id="@+id/txtTotalTaxP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxP"
+                    app:layout_constraintStart_toStartOf="@+id/txtProTax" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
