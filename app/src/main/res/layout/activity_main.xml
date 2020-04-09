@@ -2,8 +2,8 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@android:style/Widget.Material.Light.ScrollView"
     android:layout_width="match_parent"
-   style="@android:style/Widget.Material.Light.ScrollView"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:scrollbars="none"
@@ -56,6 +56,7 @@
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -74,10 +75,11 @@
                 android:id="@+id/txtFName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/ic_action_nameperson"
+                android:drawableLeft="@drawable/ic_action_persondetails"
                 android:hint="First Name" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -96,10 +98,11 @@
                 android:id="@+id/txtLName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/ic_action_nameperson"
+                android:drawableLeft="@drawable/ic_action_persondetails"
                 android:hint="Last Name" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout4"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -109,19 +112,21 @@
             android:textColorHint="@color/colorbox"
             app:boxStrokeColor="@color/colorbox"
             app:endIconTint="@color/colorbox"
+            app:errorEnabled="true"
             app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-            app:errorEnabled="true">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDOB"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawablePadding="8dp"
                 android:drawableLeft="@drawable/ic_action_calender"
+                android:drawablePadding="8dp"
                 android:hint="Birth Date" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout7"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -131,20 +136,21 @@
             android:textColorHint="@color/colorbox"
             app:boxStrokeColor="@color/colorbox"
             app:endIconTint="@color/colorbox"
+            app:errorEnabled="true"
             app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-            app:errorEnabled="true">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtAge"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawablePadding="8dp"
-                android:text="Age"
                 android:enabled="false"
+                android:text="Age"
 
-                android:textColor="@color/colorbox"/>
+                android:textColor="@color/colorbox" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -157,8 +163,7 @@
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/radioGroup"
-             />
+            app:layout_constraintTop_toTopOf="@+id/radioGroup" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -193,6 +198,7 @@
                 android:buttonTint="@color/colorbox"
                 android:text="Other's" />
         </RadioGroup>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout5"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -202,18 +208,19 @@
             android:textColorHint="@color/colorbox"
             app:boxStrokeColor="@color/colorbox"
             app:endIconTint="@color/colorbox"
+            app:errorEnabled="true"
             app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-            app:errorEnabled="true">
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtGrossIncome"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:drawableLeft="@drawable/ic_action_income"
                 android:drawablePadding="8dp"
                 android:hint="Gross Income"
-                android:drawableLeft="@drawable/ic_action_grossincome"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -226,20 +233,22 @@
             android:textColorHint="@color/colorbox"
             app:boxStrokeColor="@color/colorbox"
             app:endIconTint="@color/colorbox"
+            app:errorEnabled="true"
             app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
-            app:errorEnabled="true">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtRRSPCont"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:drawableLeft="@drawable/ic_action_income"
                 android:drawablePadding="8dp"
                 android:hint="RRSP Contributed"
-                android:drawableLeft="@drawable/ic_action_grossincome"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCalculate"
             android:layout_width="wrap_content"
@@ -251,7 +260,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
-        </com.google.android.material.button.MaterialButton>
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"></com.google.android.material.button.MaterialButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

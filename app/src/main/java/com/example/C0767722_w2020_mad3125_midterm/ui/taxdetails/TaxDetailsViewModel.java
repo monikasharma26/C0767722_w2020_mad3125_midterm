@@ -1,4 +1,4 @@
-package com.example.C0767722_w2020_mad3125_midterm.ui.taxDetails;
+package com.example.C0767722_w2020_mad3125_midterm.ui.taxdetails;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

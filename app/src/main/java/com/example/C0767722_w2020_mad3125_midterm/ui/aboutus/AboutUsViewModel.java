@@ -1,4 +1,4 @@
-package com.example.C0767722_w2020_mad3125_midterm.ui.aboutUs;
+package com.example.C0767722_w2020_mad3125_midterm.ui.aboutus;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
