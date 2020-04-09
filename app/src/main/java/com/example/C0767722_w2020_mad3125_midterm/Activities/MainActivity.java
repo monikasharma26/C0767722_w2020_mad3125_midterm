@@ -129,5 +129,75 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendButtonClicked() {
+        String sinNumber = txtSinNo.getText().toString();
+        String fName = txtFName.getText().toString();
+        String lName = txtLName.getText().toString();
+        String dob = txtDOB.getText().toString();
+        String gender = radioType.getText().toString();
+        checkEligibleAge();
+        if (txtSinNo.getText().toString().length() != 9) {
+            showAlert("SIN must be  of 9 digits.");
+        } else if (fName.trim().isEmpty()) {
+            showAlert("Please enter First Name");
+        } else if (lName.trim().isEmpty()) {
+            showAlert("Please enter Last Name");
+        } else if (dob.trim().isEmpty()) {
+            showAlert("Please Select Date of birth");
+        } else if (txtDOB.getError() != null) {
+            showAlert(txtDOB.getError().toString());
+        } else if (txtGrossIncome.getText().toString().isEmpty()) {
+            showAlert("Please enter Gross Income");
+        } else if (txtRRSPCont.getText().toString().trim().isEmpty()) {
+            showAlert("Please enter RRSP contribution");
+        }
+        else{
+            Intent intent = new Intent(this, CRADetailsActivity.class);
+            CRACustomer craCustomer = new CRACustomer();
+            //Log.d("Sinnn", txtGrossIncome.getText().toString());
+            craCustomer.setSinNumber(sinNumber);
+            craCustomer.setfName(txtFName.getText().toString());
+            craCustomer.setlName(txtLName.getText().toString());
+            craCustomer.setBirthDate(txtDOB.getText().toString());
+            craCustomer.setGrossIncome(Double.parseDouble(txtGrossIncome.getText().toString()));
+            craCustomer.setRrsContributed(Double.parseDouble(txtRRSPCont.getText().toString()));
+            craCustomer.setGender(gender);
+            //       Log.d("tetst1",String.valueOf(age));
+            craCustomer.setAge(Integer.toString(age));
+            intent.putExtra("details", craCustomer);
+            startActivity(intent);
+        }
+
+    }
+    private void checkEligibleAge() {
+
+        txtAge.setText("Age " + age);
+        if (age < 18) {
+            txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
+            //    txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
+            String message = "Not eligible to file tax for current year 2020";
+            txtDOB.setError(message);
+        } else {
+            txtAge.setError(null);
+        }
+
+    }
+    private void showAlert(String message) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Alert!");
+        alertDialogBuilder.setMessage(message);
+        alertDialogBuilder.setIcon(R.drawable.ic_action_alerts);
+        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 }
