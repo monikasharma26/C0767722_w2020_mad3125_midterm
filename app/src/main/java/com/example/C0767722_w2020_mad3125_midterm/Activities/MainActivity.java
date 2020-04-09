@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     closeKeyboard();
                     openDatePicker();
                 } else {
-                    checkEligibleAge();
+                    checkEligibleAgeforTax();
                 }
             }
         });
@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openDatePicker();
-                checkEligibleAge();
             }
         });
         btnCalculate.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         String lName = txtLName.getText().toString();
         String dob = txtDOB.getText().toString();
         String gender = radioType.getText().toString();
-        checkEligibleAge();
+        checkEligibleAgeforTax();
         if (txtSinNo.getText().toString().length() != 9) {
             showAlert("SIN must be  of 9 digits.");
         } else if (fName.trim().isEmpty()) {
@@ -168,16 +167,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    private void checkEligibleAge() {
-
-        txtAge.setText("Age " + age);
-        if (age < 18) {
-            txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
-            //    txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
-            String message = "Not eligible to file tax for current year 2020";
-            txtDOB.setError(message);
-        } else {
-            txtAge.setError(null);
+    private void checkEligibleAgeforTax() {
+        if(txtDOB.getText().toString().length()!=0) {
+            txtAge.setText("Age " + age);
+            if (age < 18) {
+             //   txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
+              //  txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
+                String message = "Not eligible to file tax for current year 2020";
+                 txtDOB.setError(message);
+            } else {
+                txtDOB.setError(null);
+            }
         }
 
     }
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton("Cancel ", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
