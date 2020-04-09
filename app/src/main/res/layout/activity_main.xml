@@ -26,7 +26,7 @@
             android:layout_height="27dp"
             android:text="CRA Calculator"
             android:textAlignment="center"
-            android:textColor="#BA68C8"
+            android:textColor="@color/colorbox"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,10 +40,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColorHint="#BA68C8"
-            app:boxStrokeColor="#BA68C8"
-            app:endIconTint="#BA68C8"
-            app:hintTextColor="#BA68C8"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -52,7 +52,8 @@
                 android:id="@+id/txtSinNo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Sin Number" />
+                android:hint="Sin Number"
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -61,10 +62,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColorHint="#BA68C8"
-            app:boxStrokeColor="#BA68C8"
-            app:endIconTint="#BA68C8"
-            app:hintTextColor="#BA68C8"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
@@ -73,6 +74,7 @@
                 android:id="@+id/txtFName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:drawableLeft="@drawable/ic_action_nameperson"
                 android:hint="First Name" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -82,10 +84,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColorHint="#BA68C8"
-            app:boxStrokeColor="#BA68C8"
-            app:endIconTint="#BA68C8"
-            app:hintTextColor="#BA68C8"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
@@ -94,6 +96,7 @@
                 android:id="@+id/txtLName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:drawableLeft="@drawable/ic_action_nameperson"
                 android:hint="Last Name" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -103,10 +106,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColorHint="#BA68C8"
-            app:boxStrokeColor="#BA68C8"
-            app:endIconTint="#BA68C8"
-            app:hintTextColor="#BA68C8"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
@@ -116,7 +119,139 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ic_action_calender"
                 android:hint="Birth Date" />
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout7"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+            app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtAge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="8dp"
+                android:text="Age"
+                android:enabled="false"
+
+                android:textColor="@color/colorbox"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tVGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Gender"
+            android:textColor="@color/colorbox"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/radioGroup"
+             />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/tVGender"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioFullTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorbox"
+                android:checked="true"
+                android:text="Male" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioPartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorbox"
+                android:text="Female" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioTrainee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorbox"
+                android:text="Other's" />
+        </RadioGroup>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtGrossIncome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="8dp"
+                android:hint="Gross Income"
+                android:drawableLeft="@drawable/ic_action_grossincome"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/colorbox"
+            app:boxStrokeColor="@color/colorbox"
+            app:endIconTint="@color/colorbox"
+            app:hintTextColor="@color/colorbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+            app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRRSPCont"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="8dp"
+                android:hint="RRSP Contributed"
+                android:drawableLeft="@drawable/ic_action_grossincome"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorbox"
+            android:text="Calculate"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
+        </com.google.android.material.button.MaterialButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

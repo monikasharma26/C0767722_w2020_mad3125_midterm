@@ -12,4 +12,6 @@
     <color name="coloronbackground">#000000</color>
     <color name="coloronsurface">#000000</color>
     <color name="coloronerror">#ffffff</color>
+    <color name="colorbox">#BA68C8</color>
+
 </resources>
