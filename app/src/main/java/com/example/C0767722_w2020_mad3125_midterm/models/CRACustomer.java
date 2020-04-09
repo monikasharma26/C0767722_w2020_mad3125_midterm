@@ -155,7 +155,7 @@ public class CRACustomer implements Parcelable {
         return carryForwardRrsp = Calculation.calculateMaxRRSP(grossIncome) - rrsContributed;
     }
 
-    
+
     public double getTotalTaxPaid() {
         totalTaxPaid = getProvincialTax()+getFedralTax();
         return totalTaxPaid;
