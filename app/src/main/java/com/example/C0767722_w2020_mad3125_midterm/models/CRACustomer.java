@@ -1,20 +1,39 @@
 package com.example.C0767722_w2020_mad3125_midterm.models;
 
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class CRACustomer implements Parcelable {
     private int sinNumber;
     private String fName,lName,fullName;
-    private String birthDate,age;
+    private String birthDate;
+    private String gender;
+    private int age;
     private String grossIncome;
     private String rrsContributed;
 
-    public CRACustomer(int sinNumber, String fName, String lName, String birthDate, String grossIncome, String rrsContributed) {
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public CRACustomer(int sinNumber, String fName, String lName, String birthDate, String gender , String grossIncome, String rrsContributed) {
         this.sinNumber = sinNumber;
         this.fName = fName;
         this.lName = lName;
         this.birthDate = birthDate;
+        this.gender = gender;
         this.grossIncome = grossIncome;
         this.rrsContributed = rrsContributed;
     }
@@ -25,7 +44,8 @@ public class CRACustomer implements Parcelable {
         lName = in.readString();
         fullName = in.readString();
         birthDate = in.readString();
-        age = in.readString();
+        age = in.readInt();
+        gender = in.readString();
         grossIncome = in.readString();
         rrsContributed = in.readString();
     }
@@ -92,6 +112,7 @@ public class CRACustomer implements Parcelable {
     }
 
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -104,7 +125,8 @@ public class CRACustomer implements Parcelable {
         dest.writeString(lName);
         dest.writeString(fullName);
         dest.writeString(birthDate);
-        dest.writeString(age);
+        dest.writeInt(age);
+        dest.writeString(gender);
         dest.writeString(grossIncome);
         dest.writeString(rrsContributed);
     }

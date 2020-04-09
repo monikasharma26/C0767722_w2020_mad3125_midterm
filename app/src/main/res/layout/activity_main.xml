@@ -124,7 +124,9 @@
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/ic_action_calender"
                 android:drawablePadding="8dp"
-                android:hint="Birth Date" />
+                android:hint="Birth Date"
+                android:textColorHighlight="@color/colorbox"
+                android:textColorLink="@color/colorbox" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
