@@ -85,7 +85,7 @@ public class Calculation {
                             currenttax = taxIncome;
                         }
                         currenttax = currenttax * 0.1216;
-                        proviencetax = +proviencetax + currenttax;
+                        proviencetax = proviencetax + currenttax;
 
                         if (taxIncome > 69999.99) {
                             taxIncome = taxIncome - 69999.99;
@@ -98,9 +98,79 @@ public class Calculation {
             }
         }
         else {
-            Log.d("Income", "TotalTaxableIncome is Less Than 10582");
+            Log.d("Income", "TotalTaxableIncome is less Than 10582");
         }
         return proviencetax;
+    }
+    public double calculateFedralTax(double taxableIncome)
+    {
+        double cuurentTax=0;
+        double fedralTax=0;
+        double taxincome=taxableIncome;
+        if (taxincome>12069)
+        {
+            taxincome=taxincome-12069;
+            if(taxincome>35561) {
+                cuurentTax=35561;
+            }
+            else{
+                cuurentTax=taxincome;
+            }
+            cuurentTax=cuurentTax*0.15;
+            fedralTax=fedralTax+cuurentTax;
+            if(taxincome>35561)
+            {
+                taxincome=taxincome-35561;
+                if(taxincome>47628.99)
+                {
+                    cuurentTax=47628.99;
+                }
+                else {
+                    cuurentTax=taxincome;
+                }
+                cuurentTax=cuurentTax*0.205;
+                fedralTax=fedralTax+cuurentTax;
+                if(taxincome>47628.99)
+                {
+                    taxincome = taxincome-47628.99;
+                    if(taxincome>52407.99){
+                        cuurentTax=52407.99;
+                    }
+                    else{
+                        cuurentTax=taxincome;
+                    }
+                    cuurentTax=cuurentTax*0.26;
+                    fedralTax=fedralTax+cuurentTax;
+
+                    if (taxincome > 52407.99)
+                    {
+                        taxincome = taxincome-52407.99;
+                        if(taxincome>62703.99){
+                            cuurentTax=62703.99;
+                        }
+                        else{
+                            cuurentTax=taxincome;
+                        }
+                        cuurentTax=cuurentTax*0.29;
+                        fedralTax=+fedralTax+cuurentTax;
+                        if (taxincome > 62703.99)
+                        {
+                            taxincome = taxincome-62703.99;
+                            cuurentTax=taxincome;
+                            cuurentTax=cuurentTax*0.33;
+                            fedralTax=+fedralTax+cuurentTax;
+                        }
+                    }
+
+                }
+            }
+        }
+        else
+        {
+           Log.d("Tax","TotalTaxableIncome is less Than 12069");
+        }
+        return fedralTax;
+
     }
 }
 
