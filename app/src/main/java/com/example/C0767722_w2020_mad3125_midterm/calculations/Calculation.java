@@ -14,14 +14,24 @@ public class Calculation {
 
 
     public double CalculateEI(Double grossIncome){
-        double EI;
+        double ei;
         if(grossIncome>=53100){
-            EI=  53100*0.0162;
+            ei=  53100*0.0162;
         }
         else{
-            EI=grossIncome*0.0162;
+            ei=grossIncome*0.0162;
         }
-        return EI;
+        return ei;
+    }
+    public double CalculateCPP(Double grossIncome){
+        double cpp;
+        if(grossIncome>=57400){
+            cpp=  57400*0.051;
+        }
+        else{
+            cpp=grossIncome*0.051;
+        }
+        return cpp;
 
     }
 
