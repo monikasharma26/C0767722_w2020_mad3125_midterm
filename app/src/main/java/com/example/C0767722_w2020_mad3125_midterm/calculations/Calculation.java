@@ -14,7 +14,7 @@ import java.util.Date;
 public class Calculation {
 
 
-    public double CalculateEI(double grossIncome) {
+    public static double calculateEI(double grossIncome) {
         double ei;
         if (grossIncome >= 53100) {
             ei = 53100 * 0.0162;
@@ -24,7 +24,7 @@ public class Calculation {
         return ei;
     }
 
-    public double CalculateCPP(double grossIncome) {
+    public static double calculateCPP(double grossIncome) {
         double cpp;
         if (grossIncome >= 57400) {
             cpp = 57400 * 0.051;
@@ -34,13 +34,13 @@ public class Calculation {
         return cpp;
     }
 
-    public double calculateRRSP(double grossIncome) {
+    public static double calculateMaxRRSP(double grossIncome) {
         double maxRRSP;
         maxRRSP = grossIncome * 0.18;
         return maxRRSP;
     }
 
-    public double calculateProTax(double taxableIncome) {
+    public static double calculateProTax(double taxableIncome) {
         double currenttax = 0;
         double proviencetax = 0;
         double taxIncome = taxableIncome;
@@ -102,7 +102,7 @@ public class Calculation {
         }
         return proviencetax;
     }
-    public double calculateFedralTax(double taxableIncome)
+    public static double calculateFedralTax(double taxableIncome)
     {
         double cuurentTax=0;
         double fedralTax=0;
