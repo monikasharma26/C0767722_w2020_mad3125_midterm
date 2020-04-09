@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.CRADetailsActivity"></activity>
         <activity
             android:name=".Activities.CRACalulationDetailActivity"
-            android:label="@string/title_activity_cra_calulation_detail"></activity>
+            android:label="@string/title_activity_cra_calulation_detail" />
         <activity android:name=".Activities.SplashActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
