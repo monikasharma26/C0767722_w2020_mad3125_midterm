@@ -9,6 +9,28 @@ public class CRACustomer  {
     private String birthDate,age;
     private String grossIncome;
     private String rrsContributed;
+    
+    public CRACustomer(int sinNumber, String fName, String lName, String birthDate, String grossIncome, String rrsContributed) {
+        this.sinNumber = sinNumber;
+        this.fName = fName;
+        this.lName = lName;
+        this.birthDate = birthDate;
+        this.grossIncome = grossIncome;
+        this.rrsContributed = rrsContributed;
+    }
+
+    protected CRACustomer(Parcel in) {
+        sinNumber = in.readInt();
+        fName = in.readString();
+        lName = in.readString();
+        fullName = in.readString();
+        birthDate = in.readString();
+        age = in.readString();
+        grossIncome = in.readString();
+        rrsContributed = in.readString();
+    }
+
+
 
 
     public int getSinNumber() {
