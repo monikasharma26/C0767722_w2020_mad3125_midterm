@@ -3,6 +3,7 @@ package com.example.C0767722_w2020_mad3125_midterm.Activities;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -16,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.C0767722_w2020_mad3125_midterm.R;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton btnCalculate;
     private DatePickerDialog datePicker;
     private RadioButton radioType;
-    private int age;
+    private int age,currentYear,yearDOB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {checkEligibleAge();}
+                checkEligibleAge();
             }
         });
         txtDOB.setOnClickListener(new View.OnClickListener() {
@@ -107,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
                         calendar.set(year, monthOfYear, dayOfMonth);
                         SimpleDateFormat format = new SimpleDateFormat("dd-MMM-yyyy");
                         String strDate = format.format(calendar.getTime());
-
+                        yearDOB = year;
                         txtDOB.setText(strDate.toUpperCase());
-                        int currentYear = calendar.getInstance().get(Calendar.YEAR);
+                        currentYear = calendar.getInstance().get(Calendar.YEAR);
                        // Log.d("dsad", String.valueOf(currentYear));
-                        age = currentYear -year;
+
                     }
                 }, year, month, day);
         datePicker.getDatePicker().setMaxDate(new Date().getTime());
@@ -124,13 +127,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
     private void sendButtonClicked() {
-        int sinNumber = Integer.parseInt(txtSinNo.getText().toString());
+        String sinNumber = txtSinNo.getText().toString();
         String fName = txtFName.getText().toString();
         String lName = txtLName.getText().toString();
         String dob = txtDOB.getText().toString();
         String gender = radioType.getText().toString();
-      String grossIncome = txtGrossIncome.getText().toString();
-        String rrspContributed = txtRRSPCont.getText().toString();
+      //  double grossIncome = Double.parseDouble(txtGrossIncome.getText().toString());
+     //  double rrspContributed = Double.parseDouble(txtRRSPCont.getText().toString());
      /*   if(txtSinNo.getText().toString().length() != 11 || fName.length()==0 || lName.length()==0 || dob.length()==0 || txtGrossIncome.getText().toString().length()==0 ||
                 txtRRSPCont.getText().toString().length()==0 || age<18)
         {
@@ -164,14 +167,43 @@ public class MainActivity extends AppCompatActivity {
             }
         }*/
        // else {
-            CRACustomer craCustomer = new CRACustomer(sinNumber,fName,lName,dob,gender,grossIncome,rrspContributed);
-            Intent intent = new Intent(this, CRACalulationDetailActivity.class);
+           //CRACustomer craCustomer = new CRACustomer(sinNumber,fName,lName,dob,gender,grossIncome,rrspContributed);
+            Intent intent = new Intent(this, CRADetailsActivity.class);
+            CRACustomer craCustomer = new CRACustomer();
+           //Log.d("Sinnn", txtGrossIncome.getText().toString());
+            craCustomer.setSinNumber(sinNumber);
+            craCustomer.setfName(txtFName.getText().toString());
+            craCustomer.setlName(txtLName.getText().toString());
+            craCustomer.setBirthDate(txtDOB.getText().toString());
+            Log.d("tetst1",String.valueOf(Double.parseDouble(txtGrossIncome.getText().toString())));
+            craCustomer.setGrossIncome(Double.parseDouble(txtGrossIncome.getText().toString()));
+            craCustomer.setRrsContributed(Double.parseDouble(txtRRSPCont.getText().toString()));
+            craCustomer.setGender(gender);
+            craCustomer.setAge(age);
             intent.putExtra("details", craCustomer);
             startActivity(intent);
        // }
     }
-
+    private void showAlert(String message) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Alert!");
+        alertDialogBuilder.setMessage(message);
+        alertDialogBuilder.setIcon(R.drawable.ic_action_alerts);
+        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {}
+        });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+    }
         private void checkEligibleAge() {
+            age = currentYear -yearDOB;
             txtAge.setText("Age"+age);
             if (age < 18) {
                 txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
