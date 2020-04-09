@@ -17,8 +17,9 @@ public class CRACustomer implements Parcelable {
     private String birthDate;
     private String gender;
     private int age;
-    private String grossIncome;
-    private String rrsContributed;
+    private String grossIncome,rrsContributed;
+    private double provincialTax,fedralTax,cpp,ei,rrsp,carryForwardRrsp,maxiumRrsp,totalTaxPaid,totalTaxedIncome;
+
 
     public String getGender() {
         return gender;
@@ -27,8 +28,11 @@ public class CRACustomer implements Parcelable {
     public void setGender(String gender) {
         this.gender = gender;
     }
+        public CRACustomer(){
 
-    public CRACustomer(int sinNumber, String fName, String lName, String birthDate, String gender , String grossIncome, String rrsContributed) {
+        }
+    public CRACustomer(int sinNumber, String fName, String lName, String birthDate, String gender ,
+                       String grossIncome, String rrsContributed) {
         this.sinNumber = sinNumber;
         this.fName = fName;
         this.lName = lName;
@@ -67,6 +71,10 @@ public class CRACustomer implements Parcelable {
         return sinNumber;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public void setSinNumber(int sinNumber) {
         this.sinNumber = sinNumber;
     }
@@ -89,6 +97,12 @@ public class CRACustomer implements Parcelable {
 
     public String getBirthDate() {
         return birthDate;
+    }
+
+    public String getFullName()
+    {
+        fullName = lName.toUpperCase()+","+fName;
+        return fullName;
     }
 
     public void setBirthDate(String birthDate) {
