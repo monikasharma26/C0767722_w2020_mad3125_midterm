@@ -63,32 +63,32 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton btnCalculate;
     private DatePickerDialog datePicker;
     private RadioButton radioType;
-    private int age,currentYear,yearDOB;
+    private int age, currentYear, yearDOB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         int selectedId = radioGroup.getCheckedRadioButtonId();
-        radioType =  findViewById(selectedId);
+        radioType = findViewById(selectedId);
         txtDOB.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
                     closeKeyboard();
                     openDatePicker();
+                } else {
+                    checkEligibleAge();
                 }
-                else
-                {checkEligibleAge();}
-                checkEligibleAge();
             }
         });
         txtDOB.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           openDatePicker();
-                                           checkEligibleAge();
-                                       }
-    });
+            @Override
+            public void onClick(View v) {
+                openDatePicker();
+                checkEligibleAge();
+            }
+        });
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     private void openDatePicker() {
         final Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -113,110 +114,20 @@ public class MainActivity extends AppCompatActivity {
                         yearDOB = year;
                         txtDOB.setText(strDate.toUpperCase());
                         currentYear = calendar.getInstance().get(Calendar.YEAR);
-                       // Log.d("dsad", String.valueOf(currentYear));
-
+                        // Log.d("dsad", String.valueOf(currentYear));
+                        age = currentYear - year;
                     }
                 }, year, month, day);
         datePicker.getDatePicker().setMaxDate(new Date().getTime());
         datePicker.show();
 
     }
+
     private void closeKeyboard() {
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-        }
+    }
 
     private void sendButtonClicked() {
-        String sinNumber = txtSinNo.getText().toString();
-        String fName = txtFName.getText().toString();
-        String lName = txtLName.getText().toString();
-        String dob = txtDOB.getText().toString();
-        String gender = radioType.getText().toString();
-      //  double grossIncome = Double.parseDouble(txtGrossIncome.getText().toString());
-     //  double rrspContributed = Double.parseDouble(txtRRSPCont.getText().toString());
-     /*   if(txtSinNo.getText().toString().length() != 11 || fName.length()==0 || lName.length()==0 || dob.length()==0 || txtGrossIncome.getText().toString().length()==0 ||
-                txtRRSPCont.getText().toString().length()==0 || age<18)
-        {
-            if (txtSinNo.getText().toString().length() != 11) {
-                txtSinNo.setError("Sin Incorrect");
-            }
-            if (fName.length() == 0) {
-                txtFName.setError("Please Enter FirstName");
-
-            }
-            if (lName.length() == 0) {
-                txtLName.setError("Please Enter LastName");
-
-            }
-            if (dob.length() == 0) {
-                txtDOB.setError("Please Select DOB");
-
-            }
-            if (age < 18) {
-                txtDOB.setTextColor(getResources().getColor(R.color.colorAccent));
-                txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
-                String message = "Not eligible to file tax for current year 2020";
-                txtDOB.setError(message);
-            }
-            if (txtGrossIncome.getText().toString().length() == 0) {
-                txtGrossIncome.setError("Please enter Gross Income");
-
-            }
-            if (txtRRSPCont.getText().toString().length() == 0) {
-                txtRRSPCont.setError("Please enter RRSP Contribution Income");
-            }
-        }*/
-       // else {
-           //CRACustomer craCustomer = new CRACustomer(sinNumber,fName,lName,dob,gender,grossIncome,rrspContributed);
-            Intent intent = new Intent(this, CRADetailsActivity.class);
-            CRACustomer craCustomer = new CRACustomer();
-           //Log.d("Sinnn", txtGrossIncome.getText().toString());
-            craCustomer.setSinNumber(sinNumber);
-            craCustomer.setfName(txtFName.getText().toString());
-            craCustomer.setlName(txtLName.getText().toString());
-            craCustomer.setBirthDate(txtDOB.getText().toString());
-            Log.d("tetst1",String.valueOf(Double.parseDouble(txtGrossIncome.getText().toString())));
-            craCustomer.setGrossIncome(Double.parseDouble(txtGrossIncome.getText().toString()));
-            craCustomer.setRrsContributed(Double.parseDouble(txtRRSPCont.getText().toString()));
-            craCustomer.setGender(gender);
-            craCustomer.setAge(age);
-            intent.putExtra("details", craCustomer);
-            startActivity(intent);
-       // }
     }
-    private void showAlert(String message) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Alert!");
-        alertDialogBuilder.setMessage(message);
-        alertDialogBuilder.setIcon(R.drawable.ic_action_alerts);
-        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {}
-        });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-        private void checkEligibleAge() {
-            age = currentYear -yearDOB;
-            txtAge.setText("Age"+age);
-            if (age < 18) {
-                txtDOB.setTextColor(getResources().getColor(R.color.colorerror));
-                txtDOB.setTypeface(null, Typeface.BOLD_ITALIC);
-                String message = "Not eligible to file tax for current year 2020";
-                txtDOB.setError(message);
-            }
-            else
-            {
-                txtAge.setError(null);
-            }
-
-        }
-
-
 }
