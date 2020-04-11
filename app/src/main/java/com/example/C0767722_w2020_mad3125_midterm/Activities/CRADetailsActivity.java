@@ -1,6 +1,7 @@
 package com.example.C0767722_w2020_mad3125_midterm.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.C0767722_w2020_mad3125_midterm.R;
 import com.example.C0767722_w2020_mad3125_midterm.models.CRACustomer;
+
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -59,6 +61,7 @@ public class CRADetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cra_details);
         ButterKnife.inject(this);
+
         Intent intent = getIntent();
         CRACustomer details = intent.getParcelableExtra("details");
         ActionBar bar = getSupportActionBar();

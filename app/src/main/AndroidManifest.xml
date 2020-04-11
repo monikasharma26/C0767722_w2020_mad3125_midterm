@@ -9,17 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_calc"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.CRADetailsActivity"
-            android:parentActivityName=".Activities.MainActivity"></activity>
-        <activity android:name=".Activities.SplashActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>/>
-        </activity>
-        <activity android:name=".Activities.MainActivity">
+        <activity
+            android:name=".Activities.CRADetailsActivity"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:theme="@style/AppThe">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".Activities.MainActivity" />
     </application>
 
 </manifest>

@@ -191,6 +191,17 @@ public class CRACustomer implements Parcelable {
         dest.writeDouble(rrsContributed);
     }
 
+    public String getData() {
+        return
+                "Name ='" + fullName + '\n' +
+                        "City ='" + birthDate + '\n' +
+                        "Description " + age + '\n'+
+                        "Location "+ sinNumber + '\n' +
+                        "Provience" + age +'\n'
+                ;
+    }
+
+
 
 }
 

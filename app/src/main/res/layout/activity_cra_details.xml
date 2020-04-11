@@ -15,120 +15,255 @@
     app:layout_constraintVertical_bias="1.0"
     tools:context=".Activities.CRADetailsActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".DisplayDataActivity">
+    <TableLayout
+        android:id="@+id/tlTable01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingTop="3dp"
+        android:stretchColumns="1dp"
+        tools:ignore="MissingConstraints">
+        <View
+            android:layout_height="1dip"
+            android:background="#000000"/>
 
-        <TextView
-            android:id="@+id/tvSin"
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/tvSin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shapa"
+                android:text="Sin Number"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtSin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shapa"
+                android:textAlignment="center"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="15sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSin"
+                app:layout_constraintStart_toEndOf="@id/tvSin" />
+        </LinearLayout>
+    </TableRow>
+
+    <View
+        android:layout_height="1dip"
+        android:background="#000000"/>
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Sin Number"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txtSin"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shapa"
+                android:text="Full Name"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/tvSin"
+                app:layout_constraintTop_toBottomOf="@id/tvSin" />
+             </LinearLayout>
+
+             <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+              <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+                 <TextView
+                     android:id="@+id/txtFullName"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="15dp"
+                     android:layout_marginTop="20dp"
+                     android:background="@drawable/cell_shapa"
+                     android:textColor="@color/coloronsecondary"
+                     android:textColorHighlight="@color/coloronsecondary"
+                     android:textColorHint="@color/coloronsecondary"
+                     android:textColorLink="@color/coloronsecondary"
+                     android:textSize="18sp"
+                     app:layout_constraintBaseline_toBaselineOf="@+id/tvFullName"
+                     app:layout_constraintStart_toStartOf="@+id/txtSin" />
+             </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/tvSin"
-            app:layout_constraintStart_toEndOf="@id/tvSin" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvFullName"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Date Of Birth"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/tvFullName"
+                app:layout_constraintTop_toBottomOf="@id/tvFullName" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtDOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvDOB"
+                app:layout_constraintStart_toStartOf="@+id/txtFullName" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Full Name"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tvSin"
-            app:layout_constraintTop_toBottomOf="@id/tvSin" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txtFullName"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Age"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/tvDOB"
+                app:layout_constraintTop_toBottomOf="@id/tvDOB" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvAge"
+                app:layout_constraintStart_toStartOf="@+id/txtDOB" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvFullName"
-            app:layout_constraintStart_toStartOf="@+id/txtSin" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvDOB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Date Of Birth"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tvFullName"
-            app:layout_constraintTop_toBottomOf="@id/tvFullName" />
-
-        <TextView
-            android:id="@+id/txtDOB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvDOB"
-            app:layout_constraintStart_toStartOf="@+id/txtFullName" />
-
-        <TextView
-            android:id="@+id/tvAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Age"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tvDOB"
-            app:layout_constraintTop_toBottomOf="@id/tvDOB" />
-
-        <TextView
-            android:id="@+id/txtAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvAge"
-            app:layout_constraintStart_toStartOf="@+id/txtDOB" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Gender"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -137,23 +272,49 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvAge"
             app:layout_constraintTop_toBottomOf="@id/tvAge" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtGender"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvGender"
+                app:layout_constraintStart_toStartOf="@+id/txtAge" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvGender"
-            app:layout_constraintStart_toStartOf="@+id/txtAge" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvTaxFillingdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Tax Filling Date"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -161,23 +322,49 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvGender"
             app:layout_constraintTop_toBottomOf="@id/tvGender" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtTaxFillingdate"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtTaxFillingdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvTaxFillingdate"
+                app:layout_constraintStart_toStartOf="@+id/txtGender" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvTaxFillingdate"
-            app:layout_constraintStart_toStartOf="@+id/txtGender" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvGrossIncome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Gross Income"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -186,24 +373,51 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvTaxFillingdate"
             app:layout_constraintTop_toBottomOf="@id/tvTaxFillingdate" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtGrossIncome"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtGrossIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvGrossIncome"
+                app:layout_constraintStart_toStartOf="@+id/txtTaxFillingdate" />
+        </LinearLayout>
+        </TableRow>
+
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvGrossIncome"
-            app:layout_constraintStart_toStartOf="@+id/txtTaxFillingdate" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvCPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="CPP"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -211,24 +425,50 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvGrossIncome"
             app:layout_constraintTop_toBottomOf="@id/tvGrossIncome" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtCPP"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtCPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvCPP"
+                app:layout_constraintStart_toStartOf="@+id/txtGrossIncome" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvCPP"
-            app:layout_constraintStart_toStartOf="@+id/txtGrossIncome" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvEI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="EI"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -236,23 +476,49 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvCPP"
             app:layout_constraintTop_toBottomOf="@id/tvCPP" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtEI"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txtEI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvEI"
+                app:layout_constraintStart_toStartOf="@+id/txtCPP" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvEI"
-            app:layout_constraintStart_toStartOf="@+id/txtCPP" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvRRSPC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="RRSP Contributed"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -261,24 +527,50 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvEI"
             app:layout_constraintTop_toBottomOf="@id/tvEI" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtRSSC"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/txtRSSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorHint="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvRRSPC"
+                    app:layout_constraintStart_toStartOf="@+id/txtEI" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvRRSPC"
-            app:layout_constraintStart_toStartOf="@+id/txtEI" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvRRSPMax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="MAX RRSP Alllowed"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -287,24 +579,50 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvRRSPC"
             app:layout_constraintTop_toBottomOf="@id/tvRRSPC" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtRSSPMax"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/txtRSSPMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorHint="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvRRSPMax"
+                    app:layout_constraintStart_toStartOf="@+id/txtRSSC" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvRRSPMax"
-            app:layout_constraintStart_toStartOf="@+id/txtRSSC" />
+            android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
         <TextView
             android:id="@+id/tvCaryForward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Carry forward RRSP"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -313,24 +631,51 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvRRSPMax"
             app:layout_constraintTop_toBottomOf="@id/tvRRSPMax" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtCaryForward"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/txtCaryForward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorHint="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvCaryForward"
+                    app:layout_constraintStart_toStartOf="@+id/txtRSSPMax" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvCaryForward"
-            app:layout_constraintStart_toStartOf="@+id/txtRSSPMax" />
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvTotalTaxableIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Total Taxable Income"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -339,23 +684,50 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvCaryForward"
             app:layout_constraintTop_toBottomOf="@id/tvCaryForward" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtotalTaxableIn"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/txtotalTaxableIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxableIn"
+                    app:layout_constraintStart_toStartOf="@+id/txtCaryForward" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxableIn"
-            app:layout_constraintStart_toStartOf="@+id/txtCaryForward" />
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvFedTax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Federal tax"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -364,24 +736,51 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvTotalTaxableIn"
             app:layout_constraintTop_toBottomOf="@id/tvTotalTaxableIn" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtFedTax"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/txtFedTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorHint="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvFedTax"
+                    app:layout_constraintStart_toStartOf="@+id/txtotalTaxableIn" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvFedTax"
-            app:layout_constraintStart_toStartOf="@+id/txtotalTaxableIn" />
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvProTax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:text="Provincial tax"
             android:textColor="@color/coloronsecondary"
             android:textColorHighlight="@color/coloronsecondary"
@@ -390,45 +789,90 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tvFedTax"
             app:layout_constraintTop_toBottomOf="@id/tvFedTax" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtProTax"
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/txtProTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorHint="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvProTax"
+                    app:layout_constraintStart_toStartOf="@+id/txtFedTax" />
+        </LinearLayout>
+        </TableRow>
+        <View
+            android:layout_height="1dp"
+            android:background="#000000"/>
+
+        <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvProTax"
-            app:layout_constraintStart_toStartOf="@+id/txtFedTax" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvTotalTaxP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Total Tax Payed"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tvProTax"
-            app:layout_constraintTop_toBottomOf="@id/tvProTax" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtTotalTaxP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/coloronsecondary"
-            android:textColorHighlight="@color/coloronsecondary"
-            android:textColorHint="@color/coloronsecondary"
-            android:textColorLink="@color/coloronsecondary"
-            android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxP"
-            app:layout_constraintStart_toStartOf="@+id/txtProTax" />
+            <TextView
+                android:id="@+id/tvTotalTaxP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Total Tax Payed"
+                android:textColor="@color/coloronsecondary"
+                android:textColorHighlight="@color/coloronsecondary"
+                android:textColorHint="@color/coloronsecondary"
+                android:textColorLink="@color/coloronsecondary"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/tvProTax"
+                app:layout_constraintTop_toBottomOf="@id/tvProTax" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/txtTotalTaxP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/coloronsecondary"
+                    android:textColorHighlight="@color/coloronsecondary"
+                    android:textColorHint="@color/coloronsecondary"
+                    android:textColorLink="@color/coloronsecondary"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalTaxP"
+                    app:layout_constraintStart_toStartOf="@+id/txtProTax" />
+        </LinearLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+</TableLayout>
 </androidx.core.widget.NestedScrollView>

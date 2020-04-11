@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -64,10 +65,11 @@ public class MainActivity extends AppCompatActivity {
     @InjectView(R.id.tvDob)
     TextInputLayout tvDob;
 
-
+    private SharedPreferences myPref;
     private DatePickerDialog datePicker;
     private RadioButton radioType;
     private int age, currentYear, yearDOB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (txtRRSPCont.getText().toString().trim().isEmpty()) {
             showAlert("Please enter RRSP contribution");
         } else {
-            Intent intent = new Intent(this, CRADetailsActivity.class);
+            Intent intent = new Intent(this,CRADetailsActivity.class);
             CRACustomer craCustomer = new CRACustomer();
             //Log.d("Sinnn", txtGrossIncome.getText().toString());
             craCustomer.setSinNumber(sinNumber);
@@ -168,9 +170,8 @@ public class MainActivity extends AppCompatActivity {
             craCustomer.setGrossIncome(Double.parseDouble(txtGrossIncome.getText().toString()));
             craCustomer.setRrsContributed(Double.parseDouble(txtRRSPCont.getText().toString()));
             craCustomer.setGender(gender);
-            //       Log.d("tetst1",String.valueOf(age));
             craCustomer.setAge(Integer.toString(age));
-            intent.putExtra("details", craCustomer);
+           intent.putExtra("details", craCustomer);
             startActivity(intent);
         }
 

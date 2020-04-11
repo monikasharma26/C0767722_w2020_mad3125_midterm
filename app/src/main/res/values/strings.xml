@@ -4,4 +4,8 @@
     <string name="title_activity_cra_calulation_detail">CRACalulationDetailActivity</string>
     <string name="title_tax">Tax Details</string>
     <string name="title_about">About Us</string>
+    <string name="title_activity_cra_calculatordetails">CRACalculatordetailsActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_details">DetailsActivity</string>
 </resources>
